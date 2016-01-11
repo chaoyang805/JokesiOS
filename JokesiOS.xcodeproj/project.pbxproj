@@ -15,6 +15,11 @@
 		21965F291C3E11DF00BBE838 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21965F271C3E11DF00BBE838 /* LaunchScreen.storyboard */; };
 		21965F341C3E11DF00BBE838 /* JokesiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21965F331C3E11DF00BBE838 /* JokesiOSTests.m */; };
 		21965F3F1C3E11DF00BBE838 /* JokesiOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21965F3E1C3E11DF00BBE838 /* JokesiOSUITests.m */; };
+		21965F511C3E3B5600BBE838 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21965F501C3E3B5600BBE838 /* TableViewController.m */; };
+		21965F5A1C3E645800BBE838 /* JokeDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21965F591C3E645800BBE838 /* JokeDetailController.m */; };
+		21F146D11C3F4C54009C17F7 /* NetConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F146D01C3F4C54009C17F7 /* NetConnection.m */; };
+		21F146D81C3F8C40009C17F7 /* Joke.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F146D71C3F8C40009C17F7 /* Joke.m */; };
+		21F146DB1C3FA679009C17F7 /* JsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F146DA1C3FA679009C17F7 /* JsonParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,17 @@
 		21965F3A1C3E11DF00BBE838 /* JokesiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JokesiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21965F3E1C3E11DF00BBE838 /* JokesiOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JokesiOSUITests.m; sourceTree = "<group>"; };
 		21965F401C3E11DF00BBE838 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21965F4F1C3E3B5600BBE838 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		21965F501C3E3B5600BBE838 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		21965F581C3E645800BBE838 /* JokeDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JokeDetailController.h; sourceTree = "<group>"; };
+		21965F591C3E645800BBE838 /* JokeDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JokeDetailController.m; sourceTree = "<group>"; };
+		21F146CF1C3F4C54009C17F7 /* NetConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetConnection.h; sourceTree = "<group>"; };
+		21F146D01C3F4C54009C17F7 /* NetConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetConnection.m; sourceTree = "<group>"; };
+		21F146D51C3F899C009C17F7 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		21F146D61C3F8C40009C17F7 /* Joke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Joke.h; sourceTree = "<group>"; };
+		21F146D71C3F8C40009C17F7 /* Joke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Joke.m; sourceTree = "<group>"; };
+		21F146D91C3FA679009C17F7 /* JsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonParser.h; sourceTree = "<group>"; };
+		21F146DA1C3FA679009C17F7 /* JsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +117,9 @@
 		21965F181C3E11DE00BBE838 /* JokesiOS */ = {
 			isa = PBXGroup;
 			children = (
+				21F146CE1C3F4C25009C17F7 /* Net */,
+				21965F5C1C3E65AB00BBE838 /* Model */,
+				21965F5B1C3E655E00BBE838 /* View */,
 				21965F1C1C3E11DE00BBE838 /* AppDelegate.h */,
 				21965F1D1C3E11DE00BBE838 /* AppDelegate.m */,
 				21965F1F1C3E11DE00BBE838 /* ViewController.h */,
@@ -110,6 +129,9 @@
 				21965F271C3E11DF00BBE838 /* LaunchScreen.storyboard */,
 				21965F2A1C3E11DF00BBE838 /* Info.plist */,
 				21965F191C3E11DE00BBE838 /* Supporting Files */,
+				21F146D51C3F899C009C17F7 /* Config.h */,
+				21F146D91C3FA679009C17F7 /* JsonParser.h */,
+				21F146DA1C3FA679009C17F7 /* JsonParser.m */,
 			);
 			path = JokesiOS;
 			sourceTree = "<group>";
@@ -138,6 +160,35 @@
 				21965F401C3E11DF00BBE838 /* Info.plist */,
 			);
 			path = JokesiOSUITests;
+			sourceTree = "<group>";
+		};
+		21965F5B1C3E655E00BBE838 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				21965F4F1C3E3B5600BBE838 /* TableViewController.h */,
+				21965F501C3E3B5600BBE838 /* TableViewController.m */,
+				21965F581C3E645800BBE838 /* JokeDetailController.h */,
+				21965F591C3E645800BBE838 /* JokeDetailController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		21965F5C1C3E65AB00BBE838 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				21F146D61C3F8C40009C17F7 /* Joke.h */,
+				21F146D71C3F8C40009C17F7 /* Joke.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		21F146CE1C3F4C25009C17F7 /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				21F146CF1C3F4C54009C17F7 /* NetConnection.h */,
+				21F146D01C3F4C54009C17F7 /* NetConnection.m */,
+			);
+			name = Net;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,7 +323,12 @@
 			files = (
 				21965F211C3E11DE00BBE838 /* ViewController.m in Sources */,
 				21965F1E1C3E11DE00BBE838 /* AppDelegate.m in Sources */,
+				21965F511C3E3B5600BBE838 /* TableViewController.m in Sources */,
 				21965F1B1C3E11DE00BBE838 /* main.m in Sources */,
+				21965F5A1C3E645800BBE838 /* JokeDetailController.m in Sources */,
+				21F146D11C3F4C54009C17F7 /* NetConnection.m in Sources */,
+				21F146DB1C3FA679009C17F7 /* JsonParser.m in Sources */,
+				21F146D81C3F8C40009C17F7 /* Joke.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +552,7 @@
 				21965F451C3E11DF00BBE838 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21965F461C3E11DF00BBE838 /* Build configuration list for PBXNativeTarget "JokesiOSTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +561,7 @@
 				21965F481C3E11DF00BBE838 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21965F491C3E11DF00BBE838 /* Build configuration list for PBXNativeTarget "JokesiOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +570,7 @@
 				21965F4B1C3E11DF00BBE838 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
