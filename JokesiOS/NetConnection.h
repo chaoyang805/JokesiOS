@@ -12,5 +12,5 @@
 
 @property (nonatomic,nonnull) NSString *urlStr;
 
-+(void)requestJokesWithUrl: (NSString* _Nonnull)url jokesCount: (int)count successHandler: (void (^__nullable)(BOOL finished,NSData* __nullable resultData))success errorHandler: (void (^__nullable)( NSError* _Nonnull errorMsg))error;
++(void)requestJokesWithUrl: (NSString* _Nonnull)url jokesCount: (int)count successHandler: (void (^__nullable)(NSData* __nullable resultData))success errorHandler: (void (^__nullable)( NSError* _Nonnull errorMsg))error;
 @end

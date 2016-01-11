@@ -8,26 +8,32 @@
 
 #import "NetConnection.h"
 
-
 @implementation NetConnection
 
 
-+(void)requestJokesWithUrl:(NSString *)url jokesCount:(int)count successHandler:(void (^)(BOOL finished, NSData* __nullable resultData))success errorHandler:(void (^)(NSError*  __nullable errorMsg))error{
-    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
-        
-        if (connectionError) {
-            error(connectionError);
++(void)requestJokesWithUrl:(NSString *)url jokesCount:(int)count successHandler:(void (^)(NSData* __nullable resultData))success errorHandler:(void (^)(NSError*  __nullable errorMsg))error{
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionTask *task = [session dataTaskWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable e) {
+        if (e) {
+            error(e);
         }else {
-            if (data) {
-//                NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-//                NSRange range;
-//                while ((range = [str rangeOfString:@"\\<.*?>" options:NSRegularExpressionSearch]).location != NSNotFound) {
-//                    str = [str stringByReplacingCharactersInRange:range withString:@""];
-//                }
-//                NSLog(@"%@",str);
-                success(true,data);
+            
+            if (data){
+                success(data);
             }
         }
+
     }];
+    [task resume];
+//    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+//    
+//        if (connectionError) {
+//            error(connectionError);
+//        }else {
+//            if (data) {
+//                success(data);
+//            }
+//        }
+//    }];
 }
 @end

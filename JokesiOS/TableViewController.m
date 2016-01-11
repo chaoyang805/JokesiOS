@@ -81,7 +81,7 @@
     NSString *params = [NSString stringWithFormat:@"action=get_posts&user_id=%d&offset=%d",1,offset];
     NSString *url = [NSString stringWithFormat:@"%@?%@",BASE_URL,params];
     
-    [NetConnection requestJokesWithUrl:url jokesCount:10 successHandler:^(BOOL finished, NSData * _Nullable data) {
+    [NetConnection requestJokesWithUrl:url jokesCount:10 successHandler:^(NSData * _Nullable data) {
         NSArray *arr = [JsonParser jsonObjectWithData:data];
         if (currentState == STATE_PULL_REFRESH) {
             [jokes removeAllObjects];
@@ -124,7 +124,8 @@
         
     } errorHandler:^(NSError * _Nonnull errorMsg) {
         [btnLoadMore setTitle:@"出错了" forState:UIControlStateNormal];
-        NSLog(@"error!");
+        [self.refreshControl endRefreshing];
+        NSLog(@"error! %@",errorMsg);
     }];
     
 }
