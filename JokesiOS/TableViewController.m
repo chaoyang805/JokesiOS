@@ -7,6 +7,7 @@
 //
 
 #import "TableViewController.h"
+
 @interface TableViewController ()
 
 @end
@@ -104,7 +105,6 @@
                     [self resetBottomButton];
                 case STATE_UP_REFRESH:
                     currentState = STATE_NORMAL;
-                    
                     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                     if (arr.count <= 0) {
                         [btnLoadMore setTitle:@"没有更多了" forState:UIControlStateNormal];
@@ -123,9 +123,19 @@
         });
         
     } errorHandler:^(NSError * _Nonnull errorMsg) {
-        [btnLoadMore setTitle:@"出错了" forState:UIControlStateNormal];
-        [self.refreshControl endRefreshing];
-        NSLog(@"error! %@",errorMsg);
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            if (currentState == STATE_INIT) {
+                currentState = STATE_NORMAL;
+                [self initBottomButton];
+            }
+            btnLoadMore.enabled = YES;
+            [btnLoadMore setTitle:@"出错了" forState:UIControlStateNormal];
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            if (currentState == STATE_PULL_REFRESH) {
+                [self.refreshControl endRefreshing];
+            }
+            NSLog(@"error! %@",errorMsg);
+        });
     }];
     
 }

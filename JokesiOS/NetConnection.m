@@ -12,8 +12,12 @@
 
 
 +(void)requestJokesWithUrl:(NSString *)url jokesCount:(int)count successHandler:(void (^)(NSData* __nullable resultData))success errorHandler:(void (^)(NSError*  __nullable errorMsg))error{
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    //配置缓存策略
+    request.cachePolicy = NSURLRequestReturnCacheDataElseLoad;
+    
     NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionTask *task = [session dataTaskWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable e) {
+    NSURLSessionTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable e) {
         if (e) {
             error(e);
         }else {
